@@ -1,3 +1,4 @@
+require 'pry'
 def consolidate_cart(cart)
   hash = {}
   cart.each do |item_hash|
@@ -49,6 +50,7 @@ def checkout(items, coupons)
 
   cart2.each do |name, price_hash|
     total += price_hash[:price] * price_hash[:count]
+    binding.pry
   end
 
   total > 100 ? total * 0.9 : total
